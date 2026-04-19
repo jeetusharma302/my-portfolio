@@ -1,0 +1,137 @@
+/* 🌈 Animated Background */
+body {
+    margin: 0;
+    font-family: Arial;
+
+    background: linear-gradient(-45deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: white;
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* 💎 Navbar */
+nav {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.container {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.cartoon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* sab center */
+    justify-content: center;
+}
+
+.speech {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    max-width: 300px;
+}
+
+.speech p {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+/* Cartoon Image */
+.cartoon {
+    width: 220px;
+}
+
+/* Speech Bubble */
+.speech {
+    position: relative;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+
+    padding: 15px 20px;
+    border-radius: 15px;
+    color: white;
+    max-width: 300px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Bubble Tail */
+.speech::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255,255,255,0.2) transparent;
+}
+
+/* Typing Effect */
+.typing-text {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    border-right: 2px solid white;
+
+    animation: typing 3s steps(30, end) forwards,
+               blink 1s infinite;
+}
+
+@keyframes typing {
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.typing-text {
+    animation: typing 3s steps(30, end) infinite alternate,
+               blink 1s infinite;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #00c6ff;
+    color: white;
+    cursor: pointer;
+}
+
+img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%; /* circle image */
+    border: 3px solid rgba(255,255,255,0.5);
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="cartoon-box">
+
+    <img src="cartoon.png" class="cartoon">
+
+    <div class="speech">
+        <p id="text">Click button to hear me 👇</p>
+    </div>
+
+    <button onclick="speakText()" class="btn">🔊 Speak</button>
+
+</div>
+
+<script>
+function speakText() {
+    const message = "Welcome to my portfolio. I am Jitendra Sharma, a web developer, my nick name is Jeetu.";
+
+    const speech = new SpeechSynthesisUtterance(message);
+
+    speech.rate = 1;     // speed
+    speech.pitch = 1;    // voice tone
+
+    document.getElementById("text").innerText = message;
+
+    window.speechSynthesis.speak(speech);
+}
+</script>
+
+<section class="container reveal">
+    <h1 class="typing">Welcome to My Portfolio</h1>
+    <p>Hello! I am Jitendra Sharma, a web developer.</p>
+
+    <img src="jeetu.jpg" width="120" height="150">
+
+    <br><br>
+    <a href="contact.html" class="btn">Contact Me</a>
+</section>
+
+</body>
+</html>
